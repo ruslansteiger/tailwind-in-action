@@ -1,0 +1,27 @@
+{
+	"name": "tailwind-in-action",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build"
+	},
+	"dependencies": {
+		"core-js": "^3.6.4",
+		"vue": "^3.0.0-alpha.4"
+	},
+	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^2.0.6",
+		"@vue/cli-plugin-babel": "^4.1.2",
+		"@vue/cli-service": "^4.1.2",
+		"@vue/compiler-sfc": "^3.0.0-alpha.4",
+		"date-fns": "^2.9.0",
+		"tailwindcss": "^1.2.0",
+		"vue-cli-plugin-vue-next": "0.0.4",
+		"vue-template-compiler": "^2.6.10"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	]
+}
