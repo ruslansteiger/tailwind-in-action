@@ -2,4 +2,20 @@
 
 @tailwind components;
 
+.btn {
+	@apply h-8 px-4 font-medium text-white rounded transition duration-300;
+}
+.btn-primary {
+	@apply bg-green-700;
+}
+.btn-primary:hover {
+	@apply bg-green-500;
+}
+.btn-secondary {
+	@apply bg-gray-700;
+}
+.btn-secondary:hover {
+	@apply bg-gray-500;
+}
+
 @tailwind utilities;

@@ -1,13 +1,13 @@
 <template>
-	<div class="flex items-center justify-center h-screen">
-		<HelloWorld />
+	<!-- <div class="flex items-center justify-center h-screen"> -->
+	<!-- <HelloWorld /> -->
 
-		<!-- <ButtonExample /> -->
+	<!-- <ButtonExample /> -->
 
-		<!-- <CardExample :attendance="bestMeetupOrganizer" /> -->
-	</div>
+	<!-- <CardExample :attendance="bestMeetupOrganizer" /> -->
+	<!-- </div> -->
 
-	<!-- <AttendanceList :initialAttendances="attendances" /> -->
+	<AttendanceList :initialAttendances="attendances" />
 </template>
 
 <script>

@@ -1,9 +1,18 @@
 <template>
-	<div class="p-4">
+	<transition-group
+		tag="div"
+		class="p-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+		enter-active-class="duration-1000 ease-out"
+		leave-active-class="duration-1000 ease-in-out"
+		enter-from-class="opacity-0 scale-50 -translate-x-full"
+		enter-to-class="opacity-100 scale-100 translate-x-0"
+		leave-from-class="opacity-100 scale-100 translate-x-0"
+		leave-to-class="opacity-0 scale-50 translate-x-full"
+	>
 		<div
 			v-for="attendance in attendances"
 			:key="attendance.member.id"
-			class="relative flex items-center justify-between p-5 bg-white rounded shadow"
+			class="relative flex items-center justify-between p-5 bg-white rounded shadow transform"
 		>
 			<div>
 				<div>
@@ -35,23 +44,26 @@
 				</a>
 			</div>
 
-			<div>
+			<div
+				class="relative transform hover:rotate-360 hover:scale-150 duration-300"
+			>
 				<img
-					class="object-cover w-12 h-12 border border-green-700 rounded-full transform hover:rotate-360 hover:scale-150 duration-300"
+					class="object-cover w-12 h-12 border border-green-700 rounded-full"
 					:src="imageSource(attendance.member.photo)"
 					alt="Profile photo"
 				/>
 
-				<!-- <div
+				<div
+					class="absolute inset-x-0 top-0 w-5 mx-auto -mt-2"
 					v-if="attendance.member.role"
 					:title="attendance.member.role"
 				>
 					<div v-if="attendance.member.role === 'organizer'">👑</div>
 					<div v-else>👒</div>
-				</div> -->
+				</div>
 			</div>
 
-			<!-- <button
+			<button
 				class="absolute top-0 right-0 p-1 text-gray-400 hover:text-red-500 transition-colors duration-300"
 				@click="remove(attendance)"
 			>
@@ -67,17 +79,17 @@
 						d="M256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256s-18.7 93.3-52.7 127.3S304.1 436 256 436c-48.1 0-93.3-18.7-127.3-52.7S76 304.1 76 256s18.7-93.3 52.7-127.3S207.9 76 256 76m0-28C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
 					/>
 				</svg>
-			</button> -->
+			</button>
 		</div>
-	</div>
+	</transition-group>
 
-	<!-- <div class="flex justify-center pb-20 mt-4">
+	<div class="flex justify-center pb-20 mt-4">
 		<button @click="add" class="flex items-center p-4">
 			<img class="w-8" src="/vue-basel-logo.svg" alt="Vue Basel Logo" />
 			Add new attendance
 			<img class="w-8" src="/vue-basel-logo.svg" alt="Vue Basel Logo" />
 		</button>
-	</div> -->
+	</div>
 </template>
 
 <script>
